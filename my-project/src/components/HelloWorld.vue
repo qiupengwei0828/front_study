@@ -84,12 +84,21 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted(){
+    axios
+      .get('/try/ajax/json_demo.json')
+      .then(response => (this.info = response))
+      .catch(function (error) { // 请求失败处理
+        console.log(error);
+      });
   }
 }
 </script>
