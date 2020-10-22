@@ -11,10 +11,14 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      // '/': {
+      //   target: 'https://www.runoob.com',// 请换成你的地址
+      //   changeOrigin: true
+      // },
       '/': {
-        target: 'https://www.runoob.com',// 请换成你的地址
+        target: 'http://localhost:8887',// 请换成你的地址
         changeOrigin: true
-      }
+      }, 
       //   '/': {
       //     target: 'http://127.0.0.1:8088', //设置调用接口域名和端口号别忘了加http
       //     changeOrigin: true,

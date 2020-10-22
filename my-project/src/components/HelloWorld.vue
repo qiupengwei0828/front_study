@@ -93,12 +93,39 @@ export default {
     }
   },
   mounted(){
-    axios
-      .get('/try/ajax/json_demo.json')
-      .then(response => (this.info = response))
-      .catch(function (error) { // 请求失败处理
-        console.log(error);
-      });
+    this.testGetBackPathVariable();
+  },
+  methods:{
+     /**
+      *测试前端跨域请求
+      */
+     testCros: function(){
+        axios
+        .get('/try/ajax/json_demo.json')
+        .then(function(response){
+         console.log(response.data);
+        }  
+        )
+        .catch(function (error) { // 请求失败处理
+         console.log(error);
+       });
+     },
+     /**
+      * 测试 pathVariable
+      */
+     testGetBackPathVariable:function(){
+       axios.get('/testStudy/v1/item/itemIndex').then(function(response){
+       console.log(response);
+       }).catch(function(error){
+       console.log(error);
+       });
+     },
+     /**
+      * 测试 pathParams
+      */
+     testGetParams:function(){
+
+     }
   }
 }
 </script>
