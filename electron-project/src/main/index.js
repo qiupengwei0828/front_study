@@ -17,15 +17,16 @@ const winURL = process.env.NODE_ENV === 'development'
 
 function createWindow () {
   /**
-   * Initial window options
+   * 创建窗体大小
    */
   mainWindow = new BrowserWindow({
-    height: 563,
+    height: 863,
     useContentSize: true,
     width: 1000
   })
 
-  mainWindow.loadURL(winURL)
+
+  mainWindow.loadURL("https://recruitment.gcw.net/")
 
   mainWindow.on('closed', () => {
     mainWindow = null
