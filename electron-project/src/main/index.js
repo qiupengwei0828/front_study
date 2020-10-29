@@ -25,8 +25,10 @@ function createWindow () {
     width: 1000
   })
 
+  mainWindow.loadURL(winURL)
+   
+  mainWindow.webContents.setFrameRate(30);
 
-  mainWindow.loadURL("https://recruitment.gcw.net/")
 
   mainWindow.on('closed', () => {
     mainWindow = null

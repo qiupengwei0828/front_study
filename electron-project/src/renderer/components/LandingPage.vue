@@ -24,6 +24,9 @@
           <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
           <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
         </div>
+          <button id="btn" @click="readFile" >展示index.js内容</button>
+          <div id="package-json-area">
+          </div>
       </div>
     </main>
   </div>
@@ -31,6 +34,11 @@
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
+  var holder = document.getElementById('holder');
+
+  const fs = require("fs");
+  const path = require("path");   
+  let btn = document.getElementById("btn");
 
   export default {
     name: 'landing-page',
@@ -38,7 +46,17 @@
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
-      }
+      },
+      readFile(){
+         fs.readFile(path.join(__dirname, "test.txt"), "utf-8", function(err, data) {
+           if (err) {
+            console.log(err);
+            } else {
+             console.log(data);
+             document.getElementById("package-json-area").innerHTML = data;
+            }
+            })
+       }
     }
   }
 </script>
