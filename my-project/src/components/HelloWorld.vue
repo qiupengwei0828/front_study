@@ -85,6 +85,7 @@
 
 <script>
 import axios from 'axios'
+//import main from '../main.js'
 export default {
   name: 'HelloWorld',
   data () {
@@ -93,7 +94,12 @@ export default {
     }
   },
   mounted(){
-    this.testGetBackPathVariable();
+    //this.testGetBackPathVariable();
+    console.log("11111111111111111111111111111");
+    let arr=['1','2','3','4','5'];
+    this.testGetParams();
+    var arrStr=arr.join();
+    console.log(arrStr);
   },
   methods:{
      /**
@@ -124,7 +130,7 @@ export default {
       * 测试 pathParams
       */
      testGetParams:function(){
-
+       //console.log(main);
      }
   }
 }
